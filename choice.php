@@ -17,10 +17,10 @@ $PAGE->set_context($context);
 
 $dbinfo = new \block_you_chose\block_you_chose_database_info();
 
-$course = $dbinfo->get_course_shortname($course_id);
+$course_name = $dbinfo->get_course_shortname($course_id);
 $PAGE->set_title(get_string('you_chose', 'block_you_chose'));
 
-$PAGE->navbar->add($course->shortname, new moodle_url('/course/view.php',array('id'=>$course_id)));
+$PAGE->navbar->add($course_name, new moodle_url('/course/view.php',array('id'=>$course_id)));
 $PAGE->navbar->add(get_string('pluginname','block_you_chose'));
 
 echo $OUTPUT->header();

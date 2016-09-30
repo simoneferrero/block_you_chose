@@ -2,7 +2,7 @@
 
     $capabilities = array(
 
-        'block/simplehtml:addinstance' => array(
+        'block/you_chose:addinstance' => array(
             'riskbitmask' => RISK_SPAM | RISK_XSS,
 
             'captype' => 'write',
@@ -13,5 +13,5 @@
             ),
 
             'clonepermissionsfrom' => 'moodle/site:manageblocks'
-        )
+        ),
     );
