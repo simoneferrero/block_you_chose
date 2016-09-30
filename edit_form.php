@@ -4,21 +4,12 @@ class block_you_chose_edit_form extends block_edit_form {
 
     protected function specific_definition($mform)
     {
-        $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
+        require_once("/classes/helper_functions.php");
+        $helperFunctions = new \block_you_chose\block_you_chose_helper_functions();
+        $numberOfChoices = $helperFunctions->getArray();
 
-        $optionsArray = array();
-        $min = 3;
-        $max = 10;
-
-        for ($i = $min; $i <= $max; $i++)
-        {
-            $optionsArray[$i] = $i;
-        }
-
-        $mform->addElement('select', 'config_num', get_string('chalices_options', 'block_you_chose'),
-            $optionsArray);
+        $mform->addElement('select', 'config_num', get_string('chalices_options', 'block_you_chose'), $numberOfChoices["optionsArray"]);
         $mform->setType('config_num', PARAM_INT);
-        $mform->setDefault('config_num', $min);
-
+        $mform->setDefault('config_num', $numberOfChoices["min"]);
     }
 }

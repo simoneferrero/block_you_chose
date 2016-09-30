@@ -10,5 +10,4 @@ $string['choose_chalice'] = 'Chalice number ';
 $string['poorly'] = 'POORLY! Congratulations, you\'re dead. Have fun while your face melts off, you scumbag nazi.';
 $string['wisely'] = 'WISELY! Eternity and glory are yours... Way to go fighting those scumbag nazis!';
 $string['empty'] = '';
-$string['blocksettings'] = 'Chalices options';
 $string['chalices_options'] = 'Set the number of chalices to display (min. 3, max. 10)';

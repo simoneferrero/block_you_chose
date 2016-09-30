@@ -10,7 +10,6 @@ $chalice = required_param('chalice', PARAM_INT);
 $course_id = required_param("course_id", PARAM_INT);
 $tot = required_param("tot", PARAM_INT);
 $rightOne = rand(1, $tot);
-echo $rightOne;
 
 $PAGE->set_url('/blocks/you_chose/choice.php', array('chalice' => $chalice, 'course_id' => $course_id, 'tot' => $tot));
 $PAGE->set_pagelayout('standard');
@@ -22,6 +21,9 @@ $dbinfo = new \block_you_chose\block_you_chose_database_info();
 
 $course_name = $dbinfo->get_course_shortname($course_id);
 $PAGE->set_title(get_string('you_chose', 'block_you_chose'));
+
+$configNum = get_config('block_you_chose');
+var_dump($configNum);
 
 $PAGE->navbar->add($course_name, new moodle_url('/course/view.php',array('id'=>$course_id)));
 $PAGE->navbar->add(get_string('pluginname','block_you_chose'));
