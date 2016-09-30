@@ -4,7 +4,6 @@ $string['pluginname'] = 'You Chose block';
 $string['you_chose'] = 'You chose...';
 $string['footer'] = 'Are you brave enough to choose?';
 $string['you_chose:addinstance'] = 'Add some fun to your course page!';
-$string['you_chose:myaddinstance'] = 'Add some fun to your page!';
 $string['choose_img'] = 'Choose one chalice...';
 $string['choose'] = 'There are three chalices in front of you. One will grant you eternal life and glory. Instead, the others will... not be as pleasant.';
 $string['choose_1'] = 'Will you choose the first...';
