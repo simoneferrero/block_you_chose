@@ -4,12 +4,24 @@ require_once("../../config.php");
 
 global $CFG, $PAGE, $OUTPUT;
 
+require_once($CFG->dirroot . "/blocks/you_chose/classes/db_info.php");
+
 $chalice = required_param('chalice', PARAM_INT);
 $course_id = required_param("course_id", PARAM_INT);
 
+$PAGE->set_url('/blocks/you_chose/choice.php', array('chalice' => $chalice, 'course_id' => $course_id));
 $PAGE->set_pagelayout('standard');
 
+$context = context_course::instance($course_id);
+$PAGE->set_context($context);
+
+$dbinfo = new \block_you_chose\block_you_chose_database_info();
+
+$course_name = $dbinfo->get_course_shortname($course_id);
 $PAGE->set_title(get_string('you_chose', 'block_you_chose'));
+
+$PAGE->navbar->add($course_name, new moodle_url('/course/view.php',array('id'=>$course_id)));
+$PAGE->navbar->add(get_string('pluginname','block_you_chose'));
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('you_chose', 'block_you_chose'));
