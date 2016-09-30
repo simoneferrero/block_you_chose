@@ -9,6 +9,8 @@ require_once("/classes/db_info.php");
 $chalice = required_param('chalice', PARAM_INT);
 $course_id = required_param("course_id", PARAM_INT);
 $tot = required_param("tot", PARAM_INT);
+$rightOne = rand(1, $tot);
+echo $rightOne;
 
 $PAGE->set_url('/blocks/you_chose/choice.php', array('chalice' => $chalice, 'course_id' => $course_id, 'tot' => $tot));
 $PAGE->set_pagelayout('standard');
@@ -26,13 +28,6 @@ $PAGE->navbar->add(get_string('pluginname','block_you_chose'));
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('you_chose', 'block_you_chose'));
-
-$numberOfChalices = array();
-for ($j = 1; $j <= $tot; $j++)
-{
-    $numberOfChalices[] = $j;
-}
-$rightOne = array_rand($numberOfChalices);
 
 if ($chalice === $rightOne)
 {
