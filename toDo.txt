@@ -1,3 +1,5 @@
 - Add information about the course (navbar shortname)
 - Look at images issue
 - Style plugin
+- Add new options (eg. give possibility to set number of chalices - min. 3)
+- Randomize good choice
